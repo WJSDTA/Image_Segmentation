@@ -1,5 +1,6 @@
 /*此为主要代码*/
 /*此代码用来实现从寻找轮廓的边缘，并且寻找图像的轮廓，并从原图中根据轮廓把图像切割出来*/
+/*
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 #include <iostream>
@@ -17,7 +18,7 @@ RNG rng(12345);
 /// 函数声明
 void thresh_callback(int, void*);
 
-/** @主函数 */
+// @主函数 
 
 int main(int argc, char** argv)
 {
@@ -40,7 +41,7 @@ int main(int argc, char** argv)
 	return(0);
 }
 
-/** @thresh_callback 函数 */
+//@thresh_callback 函数
 
 void thresh_callback(int, void*)
 {
@@ -93,3 +94,4 @@ void thresh_callback(int, void*)
 	namedWindow("Contours", CV_WINDOW_AUTOSIZE);
 	imshow("Contours", drawing);
 }
+*/

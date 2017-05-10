@@ -148,6 +148,7 @@
   <ItemGroup>
     <ClCompile Include="drawshap.cpp" />
     <ClCompile Include="findshap.cpp" />
+    <ClCompile Include="Find_Edge.cpp" />
     <ClCompile Include="Find_Rect.cpp" />
     <ClCompile Include="nextfind.cpp" />
   </ItemGroup>
