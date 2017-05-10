@@ -1,5 +1,5 @@
-/*寻找外接矩形代码可用*/
-
+/*此为主要代码*/
+/*此代码用来实现从寻找轮廓的边缘，并且寻找图像的轮廓，并从原图中根据轮廓把图像切割出来*/
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
 #include <iostream>
@@ -75,26 +75,17 @@ void thresh_callback(int, void*)
 		drawContours(drawing, contours_poly, i, color, 1, 8, vector<Vec4i>(), 0, Point());
 		rectangle(drawing, boundRect[i].tl(), boundRect[i].br(), color, 2, 8, 0);
 		boundRect[i] = boundingRect(Mat(contours_poly[i]));//得到轮廓外接矩形数据结构   
-	//	circle(drawing, center[i], (int)radius[i], color, 2, 8, 0);
 
-	
-		// image = drawing;
-
-		if (boundRect[i].area()>1000) //有些轮廓就是一个点，要舍去    
+		if (boundRect[i].area()>1000) //对所取得的轮廓进行筛选，过滤掉一些面积过小的区域   
 		{
 
 			cout << i << endl;
 			cv::Mat imageROI = image(boundRect[i]);//根据轮廓外接矩形信息进行截取RIO感兴趣部分图像    
-		std::stringstream ss;//int转换为string    
+		    std::stringstream ss;//int转换为string    
 			std::string str;
 			ss << i;
 			ss >> str;
-		//string tempname = pathWrite + "\\" + str + "result.jpg"; <span style = "font-family: Arial, Helvetica, sans-serif;">//pathWrite变量是文件夹路径   
-			//	imwrite(tempname.c_str(), imageROI);//存储图像至指定文件夹 */   
-													//cout<<tempname<<endl;   
-			  //   namedWindow("Contours %d", CV_WINDOW_AUTOSIZE);
-									imshow(str,imageROI);   
-													//cvResetImageROI(imageROI);
+	    	imshow(str,imageROI);   //对切割的图像进行多窗口的展示
 		}
 	}
 

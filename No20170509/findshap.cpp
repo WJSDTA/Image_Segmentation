@@ -1,3 +1,4 @@
+/*此为测试代码，对整体无作用*/
 /*
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
